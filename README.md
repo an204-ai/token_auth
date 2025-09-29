@@ -11,7 +11,7 @@ node app.js
 POST `http://localhost:3000/register`  
 Body JSON: `{ "username": "bob", "password": "12345" }`  
 
-![register](./public/results/register.png)
+![register](/public/results/register.png)
 
 ---
 
@@ -19,21 +19,21 @@ Body JSON: `{ "username": "bob", "password": "12345" }`
 POST `http://localhost:3000/login`  
 Body JSON: `{ "username": "bob", "password": "12345" }`  
 
-![login](./public/results/login.png)
+![login](public/results/login.png)
 
 ---
 
 ### Profile (No Token)
 GET `http://localhost:3000/profile` (không gửi token)  
 
-![profile_no_token](./public/results/profile_no_token.png)
+![profile_no_token](public/results/profile_no_token.png)
 
 ---
 
 ### Profile (With Token)
 GET `http://localhost:3000/profile` với header `Authorization: Bearer <token>`  
 
-![profile_with_token](./public/results/profile_with_token.png)
+![profile_with_token](public/results/profile_with_token.png)
 
 ## commit on github
 git init
