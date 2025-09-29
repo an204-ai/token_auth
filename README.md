@@ -1,48 +1,41 @@
 # Token Authentication Lab
-
 Demo project về **JWT/Token-based Authentication** với Node.js + MongoDB.  
 Ứng dụng minh họa các bước đăng ký, đăng nhập và truy cập profile với token.
-
 ---
-
 ## How to run
 
 ```bash
 npm install
 node app.js
-⚠️ MongoDB phải chạy trước (local hoặc docker).
+### Register
+POST `http://localhost:3000/register`  
+Body JSON: `{ "username": "bob", "password": "12345" }`  
 
-Endpoints & How to test (POSTMAN)
-🔹 Register
-URL: POST http://localhost:3000/register
-Body JSON:
-{ "username": "testuser", "password": "12345" }
-Expected: User registered, redirect /login
-![](public/results/register.png)
+![register](./public/results/register.png)
 
-🔹 Login
-URL: POST http://localhost:3000/login
+---
 
-Body JSON:
-{ "username": "testuser", "password": "12345" }
-Expected: Login success → nhận được token
-![](public/results/login.png)
+### Login
+POST `http://localhost:3000/login`  
+Body JSON: `{ "username": "bob", "password": "12345" }`  
 
-🔹 Profile (No Token)
-URL: GET http://localhost:3000/profile
-Header: Không gửi token
-Expected: Bị từ chối truy cập (Unauthorized)
-![](public/results/profile_no_token.png)
+![login](./public/results/login.png)
 
-🔹 Profile (With Token)
-URL: GET http://localhost:3000/profile
-Header: Authorization: Bearer <token>
-Expected: Hiển thị thông tin user trong profile page
-![](public/results/profile_with_token.png)
+---
 
-Commit & push lên GitHub
-bash
-Sao chép mã
+### Profile (No Token)
+GET `http://localhost:3000/profile` (không gửi token)  
+
+![profile_no_token](./public/results/profile_no_token.png)
+
+---
+
+### Profile (With Token)
+GET `http://localhost:3000/profile` với header `Authorization: Bearer <token>`  
+
+![profile_with_token](./public/results/profile_with_token.png)
+
+## commit on github
 git init
 git add .
 git commit -m "Token auth lab"
